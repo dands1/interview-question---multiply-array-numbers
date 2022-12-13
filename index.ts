@@ -8,4 +8,20 @@ function multiplyArray(arr: number[]) {
   return [24, 12, 8, 6];
 }
 
-console.log(multiplyArray([1,2,3,4]));
+compareAndLog(multiplyArray([1, 2, 3, 4]), [24, 12, 8, 6]);
+
+function compareAndLog(arr1: number[], arr2: number[]) {
+  console.log(compareArrays(arr1, arr2));
+}
+
+function compareArrays(arr1: number[], arr2: number[]) {
+  if (arr1.length !== arr2.length) {
+    return false;
+  }
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr1[i] !== arr2[i]) {
+      return false;
+    }
+  }
+  return true;
+}
